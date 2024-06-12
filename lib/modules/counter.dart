@@ -34,7 +34,7 @@ class _CounterPageState extends State<CounterPage> {
                   ],
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "Empty value is is not permitted to set initial counter";
+                      return "Empty value it is not permitted to set initial counter";
                     }
                     try {
                       int.parse(value);

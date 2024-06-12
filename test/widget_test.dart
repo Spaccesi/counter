@@ -15,15 +15,37 @@ void main() {
     await tester.pumpWidget(const MyApp());
 
     // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('Click counter: 0'), findsOneWidget);
+    expect(find.text('Click counter: 1'), findsNothing);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    await tester.tap(find.bySemanticsLabel("Add 1 to counter"));
     await tester.pump();
 
     // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Click counter: 0'), findsNothing);
+    expect(find.text('Click counter: 1'), findsOneWidget);
+  });
+
+  testWidgets('Counter set smoke test', (WidgetTester tester) async {
+    // Build our app and trigger a frame.
+    await tester.pumpWidget(const MyApp());
+
+    // Verify that our counter starts at 0.
+    expect(find.text('Click counter: 0'), findsOneWidget);
+    expect(find.text('Click counter: 100'), findsNothing);
+
+    final emailField = find.ancestor(
+      of: find.text('Initial counter'),
+      matching: find.byType(TextFormField),
+    );
+    await tester.enterText(emailField, "100");
+    expect(find.text('100'), findsOneWidget);
+
+    await tester.tap(find.bySemanticsLabel("Set counter"));
+    await tester.pump();
+
+    // Verify that our counter has incremented.
+    expect(find.text('Click counter: 0'), findsNothing);
+    expect(find.text('Click counter: 100'), findsOneWidget);
   });
 }
