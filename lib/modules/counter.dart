@@ -19,7 +19,6 @@ class _CounterPageState extends State<CounterPage> {
               padding: EdgeInsets.all(24.0),
               child: TextField(
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
                   labelText: 'Initial counter',
                 ),
               ),
