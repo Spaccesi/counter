@@ -28,10 +28,6 @@ class _CounterPageState extends State<CounterPage> {
               onPressed: () {
                 // TODO Add your onPressed code here!
               },
-              style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(Colors.deepPurple),
-                foregroundColor: WidgetStateProperty.all(Colors.white),
-              ),
               child: const Text('Set counter'),
             ),
             const SizedBox(height: 24),
@@ -51,11 +47,6 @@ class _CounterPageState extends State<CounterPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                            WidgetStateProperty.all(Colors.deepPurple),
-                        foregroundColor: WidgetStateProperty.all(Colors.white),
-                      ),
                       onPressed: () {
                         // TODO Add your onPressed code here!
                       },
