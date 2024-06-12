@@ -36,13 +36,13 @@ class _CounterPageState extends State<CounterPage> {
                 ],
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "Empty value it is not permitted to set initial counter";
+                    return "Empty value is not allowed for setting the initial counter";
                   }
                   try {
                     int.parse(value);
                     return null;
                   } catch (e) {
-                    return "Something went wrong! Try again.";
+                    return "Something has gone wrong. Try again.";
                   }
                 },
                 decoration: const InputDecoration(
