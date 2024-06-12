@@ -16,6 +16,20 @@ class _CounterPageState extends State<CounterPage> {
 
   final _formKey = GlobalKey<FormState>();
 
+  void _setCounter() {
+    if (!_formKey.currentState!.validate()) return;
+    setState(() {
+      counter = int.parse(_initialCounterController.text);
+      _initialCounterController.text = "";
+    });
+  }
+
+  void _addOne() {
+    setState(() {
+      counter += 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +48,7 @@ class _CounterPageState extends State<CounterPage> {
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
                 ],
+                onFieldSubmitted: (_) => _setCounter(),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "Empty value is not allowed for setting the initial counter";
@@ -52,13 +67,7 @@ class _CounterPageState extends State<CounterPage> {
             ),
             const SizedBox(height: defaultGap),
             ElevatedButton(
-              onPressed: () {
-                if (!_formKey.currentState!.validate()) return;
-                setState(() {
-                  counter = int.parse(_initialCounterController.text);
-                  _initialCounterController.text = "";
-                });
-              },
+              onPressed: _setCounter,
               child: const Text('Set counter'),
             ),
             const SizedBox(height: defaultGap),
@@ -68,9 +77,7 @@ class _CounterPageState extends State<CounterPage> {
             ),
             const SizedBox(height: defaultGap),
             ElevatedButton(
-              onPressed: () => setState(() {
-                counter += 1;
-              }),
+              onPressed: _addOne,
               child: const Text('Add 1 to counter'),
             ),
           ],
