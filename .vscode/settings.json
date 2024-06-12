@@ -1,0 +1,38 @@
+{
+  "search.exclude": {
+    "**.g.dart": true,
+    "**.freezed.dart": true
+  },
+  "files.watcherExclude": {
+    "**.g.dart": true,
+    "**.freezed.dart": true
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit",
+    "source.autoBarrel": "explicit",
+  },
+  "workbench.statusBar.visible": true,
+  "workbench.tips.enabled": true,
+  "workbench.editor.scrollToSwitchTabs": false,
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "prettier.tabWidth": 2,
+  },
+  "[dart]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+  },
+  "[html]": {
+    "editor.formatOnSave": true,
+  },
+  "[json]": {
+    "editor.formatOnSave": true,
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+  }
+}

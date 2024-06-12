@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "dart-code.dart-code",
+    "dart-code.flutter",
+    "mthuong.vscode-flutter-freezed-helper",
+    "localizely.flutter-intl",
+    "google.arb-editor",
+    "felixangelov.bloc",
+    "mhutchie.git-graph",
+    "jeroen-meijer.pubspec-assist",
+    "gruntfuggly.todo-tree",
+    "diemasmichiels.emulate",
+    "blaugold.melos-code",
+    "redhat.vscode-yaml"
+  ]
+}
