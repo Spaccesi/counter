@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pt1/app/theme/theme_constants.dart';
 
 class CounterPage extends StatefulWidget {
   const CounterPage({super.key});
@@ -13,49 +14,33 @@ class _CounterPageState extends State<CounterPage> {
     const String counter = '3';
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            const Padding(
-              padding: EdgeInsets.all(24.0),
-              child: TextField(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+          child: Column(
+            children: [
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'Initial counter',
                 ),
               ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // TODO Add your onPressed code here!
-              },
-              child: const Text('Set counter'),
-            ),
-            const SizedBox(height: 24),
-            Column(
-              children: [
-                Container(
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('click counter '),
-                      Text(counter),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 24),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        // TODO Add your onPressed code here!
-                      },
-                      child: const Text('Add 1 to counter'),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
+              const SizedBox(height: defaultGap),
+              ElevatedButton(
+                onPressed: () {
+                  // TODO Add your onPressed code here!
+                },
+                child: const Text('Set counter'),
+              ),
+              const SizedBox(height: defaultGap),
+              const Text('click counter $counter'),
+              const SizedBox(height: defaultGap),
+              ElevatedButton(
+                onPressed: () {
+                  // TODO Add your onPressed code here!
+                },
+                child: const Text('Add 1 to counter'),
+              ),
+            ],
+          ),
         ),
       ),
     );
