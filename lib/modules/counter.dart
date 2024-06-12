@@ -54,6 +54,7 @@ class _CounterPageState extends State<CounterPage> {
                   if (!_formKey.currentState!.validate()) return;
                   setState(() {
                     counter = int.parse(_initialCounterController.text);
+                    _initialCounterController.text = "";
                   });
                 },
                 child: const Text('Set counter'),
